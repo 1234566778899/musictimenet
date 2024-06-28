@@ -13,6 +13,7 @@ public class EnterpriseRepository(AppDbContext context) : BaseRepository<Domain.
         return Context.Set<Domain.Model.Aggregates.Enterprise>().Where(e => e.Name == name).FirstOrDefaultAsync();
     }
     
+
     public Task<Domain.Model.Aggregates.Enterprise?> FindEnterpriseByEmailAsync(EnterpriseEmailAddress email)
     {
         return Context.Set<Domain.Model.Aggregates.Enterprise>().Where(e => e.Email == email).FirstOrDefaultAsync();
